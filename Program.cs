@@ -1,12 +1,6 @@
-﻿using System.Data.Common;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
+﻿var listaClientes = new List<Cliente>(); // INSTÂNCIA DA LISTA
 
-// 2
-var listaClientes = new List<Cliente>();
-
-var cliente1 = new Cliente
+var cliente1 = new Cliente // INSTÂNCIA DO CLIENTE
 {
     Id = 1,
     Nome = "Yvan Giron Matos",
@@ -61,7 +55,8 @@ var cliente5 = new Cliente
 
 listaClientes.Add(cliente5);
 
-// 3
+
+// ADICIONANDO VALORES DE OUTROS OBJETOS NO NOVO CLIENTE
 var cliente6 = new Cliente
 {
     Id = cliente3.Id,
@@ -71,29 +66,34 @@ var cliente6 = new Cliente
     Profissao = cliente3.Profissao
 };
 
-// 4: COMO ATUALIZAR UMA LISTA
+
+// ATUALIZANDO LISTA
 var cliente7 = listaClientes.FirstOrDefault(x => x.Id == cliente6.Id);
 Console.WriteLine(cliente7);
 
-// // PASSO 5
 cliente7.Nome = "Eldimar da Silva Lima";
 cliente7.Documento = "321.926.382-80";
 
+
+// RECEBENDO VALORES DE OUTROS OBJETOS
 var cliente8 = listaClientes.FirstOrDefault(x => x.Id == cliente7.Id);
 Console.WriteLine(cliente8);
 
-// // 6
+
+// ENUMERAR LISTA
 Console.WriteLine($"{listaClientes.Count()}");
 
-// // 7
+
+// REMOVER CLIENTE DE ACORDO COM A CONDIÇÃO
 var cliente9 = listaClientes.FirstOrDefault(x => x.Id == cliente1.Id);
 listaClientes.Remove(cliente9);
 
+
+// ENUMERAR LISTA
 Console.WriteLine($"{listaClientes.Count()}");
 
 
-// //9
-var cliente10 = new Cliente
+var cliente10 = new Cliente // INSTÂNCIA
 {
     Id = 10,
     Nome = "Vivian Barrada Yabuta",
@@ -104,7 +104,7 @@ var cliente10 = new Cliente
 
 listaClientes.Add(cliente10);
 
-var cliente11 = new Cliente
+var cliente11 = new Cliente // INSTÂNCIA
 
 {
     Id = 11,
@@ -116,10 +116,11 @@ var cliente11 = new Cliente
 
 listaClientes.Add(cliente11);
 
-// // 10
+
+// ENUMERAR OBJETOS DENTRO DA LISTA
 Console.WriteLine($"{listaClientes.Count()}");
 
-// // 11
+// LIMPAR LISTA
 listaClientes.Clear();
 Console.WriteLine($"{listaClientes.Count()}");
 
